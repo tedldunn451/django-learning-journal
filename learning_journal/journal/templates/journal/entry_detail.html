@@ -1,8 +1,29 @@
-<h3>{{ object.title }}</h3>
-<p>{{ object.created }}</p>
-<h3>TIME SPENT:</h3>
-<p>{{ object.time_spent }}</p>
-<h3>WHAT I LEARNED:</h3>
-<p>{{ object.learned }}</p>
-<h3>RESOURCES TO REMEMBER:</h3>
-<p>{{ object.resourses }}</p>
+{% extends "layout.html" %}
+
+{% load static %}
+
+{% block content %}
+  <section>
+    <div class="entry-list single">
+      <article>
+        <h1>{{ object.title }}</h1>
+        <p>{{ object.created }}</p>
+        <div class="entry">
+          <h3>TIME SPENT:</h3>
+          <p>{{ object.time_spent }}</p>
+        </div>
+        <div class="entry">
+          <h3>WHAT I LEARNED:</h3>
+          <p>{{ object.learned }}</p>
+        </div>
+        <div class="entry">
+          <h3>RESOURCES TO REMEMBER:</h3>
+          <p>{{ object.resourses }}</p>
+        </div>
+      </article>
+    </div>
+    <div class="edit">
+      <p><a href="#">Edit Entry</a></p>
+    </div>
+  </section>
+{% endblock %}

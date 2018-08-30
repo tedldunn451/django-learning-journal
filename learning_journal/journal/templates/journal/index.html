@@ -1,4 +1,18 @@
-{% for entry in entries%}
-  <h2><a href="{% url 'detail' pk=entry.pk %}">{{ entry.title }}</a></h2>
-  <p>{{ entry.created }}</p>
-{% endfor %}
+{% extends "layout.html" %}
+
+{% load static %}
+
+{% block content %}
+<section>
+  <div class="container">
+    <div class="entry-list">
+        {% for entry in entries%}
+        <article>
+          <h2><a href="{% url 'detail' pk=entry.pk %}">{{ entry.title }}</a></h2>
+          <p>{{ entry.created }}</p>          
+        </article>
+        {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}
