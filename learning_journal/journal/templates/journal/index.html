@@ -1,0 +1,4 @@
+{% for entry in entries%}
+  <h2><a href="{% url 'detail' pk=entry.pk %}">{{ entry.title }}</a></h2>
+  <p>{{ entry.created }}</p>
+{% endfor %}

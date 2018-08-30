@@ -7,3 +7,6 @@ class Entry(models.Model):
     time_spent = models.CharField(max_length=64)
     learned = models.TextField()
     resourses = models.TextField()
+
+    def __str__(self):
+        return self.title
